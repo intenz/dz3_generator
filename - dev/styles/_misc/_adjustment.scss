@@ -1,7 +1,7 @@
 /* --------- adjustment --------- */
 
 $container-width: 960px;
-$footer-height      : 70px;
+$footer-height      : 30px;
 
 html {
     width:100%;
@@ -11,7 +11,7 @@ html {
 
 body {
     height: 100%;
-    font: 400 14px/20px 'OpenSans-Semibold', Verdana, sans-serif;
+    font: 300 14px/20px 'Roboto','OpenSans-Semibold', Verdana, sans-serif;
     background: url(../img/bg/bg-page.png);
     background-size: cover;
 }
@@ -24,6 +24,7 @@ input {
     width: $container-width;
     margin: 0 auto;
     position: relative;
+    @include clearfix;
 }
 
 .clearfix:before,
@@ -52,7 +53,7 @@ input {
 }
 
 table {
-	border-collapse: collapse;
+    border-collapse: collapse;
     border-spacing: 0px;
 }
 
@@ -78,6 +79,15 @@ p {
 
 
 .footer {
-	position: relative; 
-	margin-top: -$footer-height;
+    position: relative; 
+    margin-top: -$footer-height;
+}
+
+.maincontent {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -480px;
+    margin-top: -335px;
 }
