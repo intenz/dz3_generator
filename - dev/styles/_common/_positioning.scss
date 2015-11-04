@@ -42,6 +42,9 @@ $controls-map: sprite-map('controls/*.png', $spacing: 10px);
 
 .positioning__table {
 	float: left;
+	display: block;
+	overflow: hidden;
+	border-radius: 3px;
 }
 
 .table__cell {
