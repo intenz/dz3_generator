@@ -4,39 +4,15 @@
   background: #f1f1f1;
   font-size: 14px;
   text-align: left;
+  padding: 0 11px;
+
+}
+
+.info__text-opacity {
+  margin-bottom: 90px;
   padding: 0 8px;
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #f4c3c2;
-    position: absolute;
-    top: 102px;
-    left: 0;
-    z-index: 1;
-  }
-  &:before {
-    content: '';
-    display: block;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 96px;
-    left: 123px;
-    border-top: 1px solid #f4c3c2;
-    border-right: 1px solid #f4c3c2;
-    transform: rotate(135deg);
-    background: #f1f1f5;
-    z-index: 2;
-  }
-
 }
 
-.opacity__modal{
-  margin-bottom: 33px;
-  padding: 20px 12px 0 10px;
-}
 .opacity__slider {
 margin-top: 26px;
 
@@ -44,8 +20,6 @@ margin-top: 26px;
 
 .opacity__button {
   @include clearfix;
-  padding: 56px 4px 0 2px;
-
 }
 
 .opacity__button-input {
