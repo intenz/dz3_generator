@@ -42,8 +42,7 @@ input {
     height: auto !important;
     height: 100%;
     overflow: hidden;
-    min-width: $container-width + 20;
-    margin-bottom: 38px;
+    min-width: $container-width + 20px;
 
     &:after {
         content:'';
@@ -87,4 +86,5 @@ p {
 .maincontent {
     display: block;
     margin-top: 60px;
+    margin-bottom: 38px;
 }
