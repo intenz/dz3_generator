@@ -7,6 +7,7 @@
       margin-bottom: 20px;
  }
  .sidebar-lang__rus{
+      border-bottom: 1px solid #a5a7ac;
       margin-bottom: 1px;
  }
  .sidebar-lang__rus, .sidebar-lang__eng{
@@ -16,11 +17,14 @@
       background-color: rgba(255,255,255,0.7);
       padding: 4px 0 0;
       display: inline-block;
-      font: 20px 'segoeuil';
-      color: #999ca1;
       cursor: pointer;
       text-align: center;
  }
+
+ .sidebar-lang__link {
+      font: 20px 'segoeuil';
+      color: #999ca1;
+}
 
 .sidebar-social__like {
     width: 43px;
