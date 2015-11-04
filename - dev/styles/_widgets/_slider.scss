@@ -1,0 +1,48 @@
+
+.ui-widget-content {
+  border: none;
+  background: #dbe1e8;
+
+}
+.ui-slider-range {
+background: #9eb2c0;
+}
+
+.ui-slider-horizontal {
+  height: 3px;
+
+  * {
+    outline: none !important;
+  }
+}
+
+.ui-corner-bottom{
+
+}
+
+.ui-slider-handle {
+
+  border-radius: 100% !important;
+  top: -9px !important;
+  margin-left: -11px !important;
+
+
+}
+
+.ui-state-default {
+  border: 7px solid #dbe1e8 !important;
+  background: #9eb2c0 !important;
+  height: 8px !important;
+  width: 8px !important;
+  box-shadow: 0 1px 1px grey;
+
+  &:hover{
+    background: #ff6666 !important;
+  }
+
+
+}
+
+.ui-corner-all {
+
+}

@@ -1,7 +1,7 @@
 /* --------- adjustment --------- */
 
 $container-width: 960px;
-$footer-height      : 36px;
+$footer-height      : 30px;
 
 html {
     width:100%;
@@ -42,8 +42,8 @@ input {
     height: auto !important;
     height: 100%;
     overflow: hidden;
-    min-width: $container-width + 20px;
-
+    min-width: $container-width + 20;
+    margin-bottom: 40px;
     &:after {
         content:'';
         display: block;

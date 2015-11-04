@@ -10,12 +10,22 @@
 
 /* --------- adjustment --------- */
 
+
 @import "_misc/adjustment";
+
+/* --------- plugins --------- */
+
+@import "_plugins/**/*";
+
+
+/* --------- widgets --------- */
+
+@import "_widgets/**/*";
 
 /* --------- common --------- */
 
 @import "_common/footer";
 @import "_common/section";
 @import "_common/aside";
-
+@import "_common/opacity";
 
