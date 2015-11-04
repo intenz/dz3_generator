@@ -4,26 +4,29 @@
   margin-right: 7px;
   font-size: 14px;
   text-align: left;
+
 }
 
 .opacity__modal{
-  padding-top: 4px;
-  margin-top: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
+  padding: 20px 12px 0 10px;
+
 }
 .opacity__slider {
-  margin-top: 28px;
+margin-top: 26px;
+
 }
 
 .opacity__button {
   @include clearfix;
-  margin: 58px 1px 26px 1px;
+  padding: 56px 4px 0 2px;
+
 }
 
 .opacity__button-input {
   height: 42px;
   width: 99px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
   color: #f1f1f1;
   font-weight: 500;
