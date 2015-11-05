@@ -23,15 +23,16 @@
 .input{
   height: 27px;
   border: 1px solid #9eb2c0;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 100%;
   background-color: #f1f1f5;
   box-sizing:border-box;
   font-size: 12px;
-  font-family: "Segoe UI";
+  line-height: 14px;
+  font-family: "segoeuil";
   color: rgb( 158, 178, 192 );
   text-indent: 5px;
-  padding: 0px 2px;
+  padding: 0;
   width: 100%;
   @include placecolor(#a4b7c4);
   margin-bottom: 21px;
