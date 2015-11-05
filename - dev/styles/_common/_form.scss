@@ -1,18 +1,14 @@
 .formwrapper{
-<<<<<<< HEAD
    height: 150px;
    max-width: 220px;
    background-color: #f1f1f5;
    padding: 0 20px;
+   position: relative;
 }
 
 .form__group{
-  margin-bottom: 12px;
-=======
    max-width: 220px;
    background-color: #f1f1f5;
-   padding: 0 20px;
-   position: relative;
    margin-bottom: 26px;
 }
 
@@ -21,7 +17,6 @@
 }
 .formwrapper.devider:before { 
   top: 151px;
->>>>>>> 961c45cbc1a042e89e741de8098b15ae6a98b79d
 }
 
 .label{
@@ -31,37 +26,22 @@
   margin-bottom:10px;
 }
 
-.input{
+.input {
   height: 27px;
   border: 1px solid #9eb2c0;
-<<<<<<< HEAD
-  border-radius: 5px;
-=======
   border-radius: 3px;
->>>>>>> 961c45cbc1a042e89e741de8098b15ae6a98b79d
   width: 100%;
   background-color: #f1f1f5;
   box-sizing:border-box;
   font-size: 12px;
-<<<<<<< HEAD
-  font-family: "Segoe UI";
   color: rgb( 158, 178, 192 );
-  text-indent: 5px;
-  padding: 0px 2px;
-  width: 100%;
-  @include placecolor(#a4b7c4);
-  margin-bottom:25px;
-=======
   line-height: 14px;
   font-family: "segoeuil";
-  color: rgb( 158, 178, 192 );
   text-indent: 5px;
   padding: 0;
-  width: 100%;
   @include placecolor(#a4b7c4);
   margin-bottom: 21px;
->>>>>>> 961c45cbc1a042e89e741de8098b15ae6a98b79d
-  margin-top: 5px
+  margin-top: 5px;
 }
 
 .form__group-wrapper{
@@ -76,7 +56,7 @@
     cursor: pointer;
     width: 220px;
     right: 0px;
-    bottom: 25px;
+    bottom: 21px;
   
 }
 
@@ -84,5 +64,4 @@
   position: absolute;
   top: 0;
   left: -9999px;
-
 }
