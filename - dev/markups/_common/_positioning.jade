@@ -1,0 +1,18 @@
+.aside__positioning_wrap.devider
+	.aside__positioning
+		h3.info__text Положение
+		.positioning_container
+			table.positioning__table
+				-for (var x = 0; x < 3; x++)
+					tr.table__row
+						-for (var i = 0; i < 3; i++)
+							td.table__cell
+								a(href="").table__link
+			ul.positioning__controls-list
+				each pos in ['X', 'Y']
+					li.positioning__controls-item
+						label.controls__label #{pos}
+							input(type="text").controls__input
+						.controls__arrow_container
+							each arrow in ['more', 'less']
+								a(href="" class="controls__arrow controls__arrow-" + arrow) #{arrow}

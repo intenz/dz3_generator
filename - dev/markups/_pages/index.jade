@@ -3,6 +3,7 @@ extends ../main
 block title
 	| Генератор водяных знаков
 
+<<<<<<< HEAD
 block content
 	.container
 		section.section-page
@@ -12,3 +13,34 @@ block content
 			h2.aside__title Настройки
 			include ../_common/_form
 			include ../_common/_opacity
+=======
+	block sidebar
+		aside.sidebar
+			ul.sidebar-lang
+				li.sidebar-lang__rus
+					a(href="#").sidebar-lang__link РУС
+				li.sidebar-lang__eng
+					a(href="#").sidebar-lang__link ENG
+			.sidebar-social
+				ul.sidebar-social__list
+					li.social-item
+						a.social__icons-link.fb Facebook
+					li.social-item
+						a.social__icons-link.fb Twitter
+					li.social-item
+						a.social__icons-link.fb Vk
+				.sidebar-social__like
+	block content
+		.container
+			section.section-page
+				h1.section__title Генератор водяных знаков
+				.container__img
+					.img__wrapp
+						.img__main
+						.img__watermarks
+			aside.aside-page
+				h2.aside__title Настройки
+				include ../_common/_form
+				include ../_common/_positioning
+				include ../_common/_opacity
+>>>>>>> 961c45cbc1a042e89e741de8098b15ae6a98b79d
