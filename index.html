@@ -26,6 +26,26 @@
 					</section>
 					<aside class="aside-page">
 						<h2 class="aside__title">Настройки</h2>
+						<div class="formwrapper">
+							<form id="add-new-project" role="form" class="form">
+								<div class="form__group">
+									<div class="form__group-wrapper"><span class="label">Исходное изображение</span>
+										<label class="label__fileupload">
+											<input id="fileupload" type="file" name="files[]" class="fileupload">
+											<input id="fileurl" type="hidden" class="fileurl">
+										</label>
+										<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+									</div>
+									<div class="form__group-wrapper"><span class="label">Водяной знак</span>
+										<label class="label__fileupload">
+											<input id="fileupload" type="file" name="files[]" class="fileupload">
+											<input id="fileurl" type="hidden" class="fileurl">
+										</label>
+										<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+									</div>
+								</div>
+							</form>
+						</div>
 						<div class="opacity__wrapper devider">
 							<div class="info__text info__text-opacity">Прозрачность
 								<div id="slider" class="opacity__slider"></div>
