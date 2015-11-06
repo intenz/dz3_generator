@@ -35,8 +35,11 @@ $controls-map: sprite-map('controls/*.png', $spacing: 10px);
 	border: 1px solid #9eb2c0;
 	background: #dbe1e8;
 
-
 	&:hover {
+		background: #f97e76;
+	}
+
+	&.active {
 		background: #f97e76;
 	}
 }
@@ -45,6 +48,10 @@ $controls-map: sprite-map('controls/*.png', $spacing: 10px);
 	display: block;
 	width: 32.5px;
 	height: 32.5px;
+
+	&:focus {
+		outline: none;
+	}	
 }
 
 .positioning__controls-list {

@@ -18,6 +18,8 @@ var main = (function (){
         var $this = $(this),
             data = $this.data('position'),
             watermark = $('.img__wrapp').find('.img__watermark-uploaded'),
+            cell = $this.closest('.table__cell'),
+            otherCells = $('.positioning__table').find('.table__cell'),
             styleReset = watermark.css({
                 'top': '',
                 'left': '',
@@ -34,6 +36,8 @@ var main = (function (){
             switch (data) {
                 case 'position-1':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'left': '0',
                         'top': '0'
@@ -41,6 +45,8 @@ var main = (function (){
                     break;
                 case 'position-2':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'top': '0',
                         'left': '0',
@@ -50,6 +56,8 @@ var main = (function (){
                     break;
                 case 'position-3':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'right': '0',
                         'top': '0'
@@ -57,6 +65,8 @@ var main = (function (){
                     break;
                 case 'position-4':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'top': '50%',
                         'left': '0',
@@ -66,6 +76,8 @@ var main = (function (){
                     break;
                 case 'position-5':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'top': '0',
                         'left': '0',
@@ -76,6 +88,8 @@ var main = (function (){
                     break;
                 case 'position-6':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'top': '50%',
                         'right': '0',
@@ -85,6 +99,8 @@ var main = (function (){
                     break;
                 case 'position-7':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'left': '0',
                         'bottom': '0'
@@ -92,6 +108,8 @@ var main = (function (){
                     break;
                 case 'position-8':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'bottom': '0',
                         'left': '0',
@@ -101,6 +119,8 @@ var main = (function (){
                     break;
                 case 'position-9':
                     styleReset,
+                    otherCells.removeClass('active'),
+                    cell.addClass('active'),
                     watermark.css({
                         'right': '0',
                         'bottom': '0'
@@ -112,16 +132,19 @@ var main = (function (){
 
     var _defaultPosition = function () {
 
-        var watermark = $('.img__wrapp').find('.img__watermark-uploaded'), 
-            defaultState = watermark.css({
-                    'top': '0',
-                    'left': '0',
-                    'right': '0',
-                    'bottom': '0',
-                    'margin': 'auto'
-            });
+        if('.img__main-uploaded'.length & '.img__watermark-uploaded'.length) {
+            var watermark = $('.img__wrapp').find('.img__watermark-uploaded'), 
+                defaultState = watermark.css({
+                        'top': '0',
+                        'left': '0',
+                        'right': '0',
+                        'bottom': '0',
+                        'margin': 'auto'
+                });
 
-        defaultState;
+            $('.table__cell:eq(4)').addClass('active');
+            defaultState;
+        };
     };
 
     var _inputPosition = function () {
