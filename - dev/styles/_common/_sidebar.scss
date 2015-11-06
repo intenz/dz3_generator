@@ -32,9 +32,15 @@
     background-image: url(../img/soc.png);
 	background-repeat: no-repeat;
 	display: inline-block;
-	background-position: 5px 0;
+	background-position: -77px 0;
 	cursor: pointer;
 	margin-left: -1px;
+     &:hover {
+       background-position: 5px 0;
+     }
+     &:active {
+       background-position: 5px 0;
+     }
  }
 .sidebar-social {
      min-width: 86px;
@@ -42,8 +48,9 @@
 .sidebar-social__list {
      width: 43px;
      float: left;
-     text-indent: -9999px; 
-}  
+     text-indent: -9999px;
+     display: none;
+}
 .social-item {
     width: 42px;
     height: 42px;
@@ -53,7 +60,6 @@
 	background-image:url(../img/soc.png);
 	background-repeat:no-repeat;
 	display:block;
-	background-position: 5px 0;
 	cursor:pointer;
     width: 42px;
     height: 42px;
