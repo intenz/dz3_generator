@@ -1,8 +1,14 @@
 .formwrapper{
+   height: 150px;
    max-width: 220px;
    background-color: #f1f1f5;
    padding: 0 20px;
    position: relative;
+}
+
+.form__group{
+   max-width: 220px;
+   background-color: #f1f1f5;
    margin-bottom: 26px;
 }
 
@@ -20,7 +26,7 @@
   margin-bottom:10px;
 }
 
-.input{
+.input {
   height: 27px;
   border: 1px solid #9eb2c0;
   border-radius: 3px;
@@ -28,15 +34,14 @@
   background-color: #f1f1f5;
   box-sizing:border-box;
   font-size: 12px;
+  color: rgb( 158, 178, 192 );
   line-height: 14px;
   font-family: "segoeuil";
-  color: rgb( 158, 178, 192 );
   text-indent: 5px;
   padding: 0;
-  width: 100%;
   @include placecolor(#a4b7c4);
   margin-bottom: 21px;
-  margin-top: 5px
+  margin-top: 5px;
 }
 
 .form__group-wrapper{
@@ -51,7 +56,7 @@
     cursor: pointer;
     width: 220px;
     right: 0px;
-    bottom: 25px;
+    bottom: 21px;
   
 }
 
@@ -59,5 +64,4 @@
   position: absolute;
   top: 0;
   left: -9999px;
-
 }
