@@ -4,13 +4,13 @@ var main = (function (){
 
     var init = function (){
         eListener();
-    }
+    };
 
     var eListener = function (){
         $('.table__link').on('click', _positioning);
         $(document).ready(_defaultPosition);
         $('.controls__input').change(_inputPosition);
-    }
+    };
 
     var _positioning = function (e) {
         e.preventDefault();
@@ -33,39 +33,39 @@ var main = (function (){
 
             switch (data) {
                 case 'position-1':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'left': '0',
                         'top': '0'
                     });
-                    break
+                    break;
                 case 'position-2':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'top': '0',
                         'left': '0',
                         'right': '0',
                         'margin': 'auto'
                     });
-                    break
+                    break;
                 case 'position-3':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'right': '0',
                         'top': '0'
                     });
-                    break
+                    break;
                 case 'position-4':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'top': '50%',
                         'left': '0',
                         'bottom': '0',
                         'transform': 'translateY(-50%)'
                     });
-                    break
+                    break;
                 case 'position-5':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'top': '0',
                         'left': '0',
@@ -73,42 +73,42 @@ var main = (function (){
                         'bottom': '0',
                         'margin': 'auto'
                     });
-                    break
+                    break;
                 case 'position-6':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'top': '50%',
                         'right': '0',
                         'bottom': '0',
                         'transform': 'translateY(-50%)'
                     });
-                    break
+                    break;
                 case 'position-7':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'left': '0',
                         'bottom': '0'
                     });
-                    break
+                    break;
                 case 'position-8':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'bottom': '0',
                         'left': '0',
                         'right': '0',
                         'margin': 'auto'
                     });
-                    break
+                    break;
                 case 'position-9':
-                    styleReset;
+                    styleReset,
                     watermark.css({
                         'right': '0',
                         'bottom': '0'
                     });
-                    break  
+                    break;
             }
         }
-    }
+    };
 
     var _defaultPosition = function () {
 
@@ -122,7 +122,7 @@ var main = (function (){
             });
 
         defaultState;
-    }
+    };
 
     var _inputPosition = function () {
 
@@ -130,17 +130,17 @@ var main = (function (){
             inputX = $('#input-X'),
             inputY = $('#input-Y'),
             watermark = $('.img__wrapp').find('.img__watermark-uploaded'),
-            transformValueX = inputX.val() + 'px';
+            transformValueX = inputX.val() + 'px',
             transformValueY = inputY.val() + 'px';
 
 
-    }
+    };
 
 
 
     return {
         init: init
-    }
+    };
 
 })();
 
