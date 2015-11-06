@@ -3,7 +3,6 @@ extends ../main
 block title
 	| Генератор водяных знаков
 
-block content
 	block sidebar
 		aside.sidebar
 			ul.sidebar-lang
@@ -27,7 +26,9 @@ block content
 				.container__img
 					.img__wrapp
 						.img__main
-						.img__watermarks
+							img(src="img/main-img_03.jpg").img__main-uploaded
+						//- .img__watermark
+						img(src="img/watermark_03.png").img__watermark-uploaded
 			aside.aside-page
 				h2.aside__title Настройки
 				include ../_common/_form
