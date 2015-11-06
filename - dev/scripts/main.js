@@ -154,7 +154,7 @@ $(document).ready(function(){
             range: "min",
             min: 0,
             max: 100,
-            value: 60,
+            value: 100,
             slide: function( event, ui ) {
                 $( "#amount" ).val( ui.value );
             }
