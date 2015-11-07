@@ -14,9 +14,9 @@
 				</ul>
 				<div class="sidebar-social">
 					<ul class="sidebar-social__list">
-						<li class="social-item"><a class="social__icons-link fb">Facebook</a></li>
-						<li class="social-item"><a class="social__icons-link fb">Twitter</a></li>
-						<li class="social-item"><a class="social__icons-link fb">Vk</a></li>
+						<li class="social-item"><a data-type="fb" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:3000/" target="_blank" class="social__icons-link fb">Facebook</a></li>
+						<li class="social-item"><a data-type="tw" href="https://twitter.com/intent/tweet?text=Hello%20world!%20http://127.0.0.1:3000/" target="_blank" class="social__icons-link tw">Twitter</a></li>
+						<li class="social-item"><a data-type="vk" href="http://vk.com/share.php?url=http://127.0.0.1:3000/" target="_blank" class="social__icons-link vk">Vk</a></li>
 					</ul>
 					<div class="sidebar-social__like"></div>
 				</div>
@@ -46,7 +46,7 @@
 								<div class="form__group-wrapper">
 									<div class="info__text">Водяной знак</div>
 									<label class="label__fileupload">
-										<input id="fileuploadSecond" type="file" name="files[]" class="fileupload">
+										<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
 										<input id="fileurl" type="hidden" class="fileurl">
 									</label>
 									<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
@@ -100,7 +100,7 @@
 						</h3>
 						<div class="opacity__button">
 							<input type="reset" value="Сброс" class="opacity__button-input opacity__button-input-res">
-							<button class="opacity__button-input opacity__button-input-load">Скачать</button>
+							<button download="watermark.png" class="opacity__button-input opacity__button-input-load">Скачать</button>
 						</div>
 					</div>
 				</aside>
@@ -125,9 +125,9 @@
 					</ul>
 					<div class="sidebar-social">
 						<ul class="sidebar-social__list">
-							<li class="social-item"><a class="social__icons-link fb">Facebook</a></li>
-							<li class="social-item"><a class="social__icons-link fb">Twitter</a></li>
-							<li class="social-item"><a class="social__icons-link fb">Vk</a></li>
+							<li class="social-item"><a data-type="fb" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:3000/" target="_blank" class="social__icons-link fb">Facebook</a></li>
+							<li class="social-item"><a data-type="tw" href="https://twitter.com/intent/tweet?text=Hello%20world!%20http://127.0.0.1:3000/" target="_blank" class="social__icons-link tw">Twitter</a></li>
+							<li class="social-item"><a data-type="vk" href="http://vk.com/share.php?url=http://127.0.0.1:3000/" target="_blank" class="social__icons-link vk">Vk</a></li>
 						</ul>
 						<div class="sidebar-social__like"></div>
 					</div>
@@ -157,7 +157,7 @@
 									<div class="form__group-wrapper">
 										<div class="info__text">Водяной знак</div>
 										<label class="label__fileupload">
-											<input id="fileuploadSecond" type="file" name="files[]" class="fileupload">
+											<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
 											<input id="fileurl" type="hidden" class="fileurl">
 										</label>
 										<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
@@ -211,7 +211,7 @@
 							</h3>
 							<div class="opacity__button">
 								<input type="reset" value="Сброс" class="opacity__button-input opacity__button-input-res">
-								<button class="opacity__button-input opacity__button-input-load">Скачать</button>
+								<button download="watermark.png" class="opacity__button-input opacity__button-input-load">Скачать</button>
 							</div>
 						</div>
 					</aside>
@@ -229,6 +229,9 @@
 			<script src="js/plugins.min.js"></script>
 			<script src="js/main.min.js"></script>
 			<script src="- dev/scripts/addimage.js"></script>
+			<script src="js/base64.js"></script>
+			<script src="js/canvas2image.js"></script>
+			<script src="js/html2canvas.js"></script>
 		</p>
 	</footer>
 </html>

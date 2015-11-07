@@ -1,7 +1,7 @@
 var myModule = (function(){
 
 //Инициализирует наш модуль
-	var init = function(){
+	var init = function(){	
 		_setUpListeners();
 		//то, что должно произойти сразу
 		};
@@ -14,8 +14,9 @@ var myModule = (function(){
 
 //Изменяет файл аплоад
   var _changefileUploadFirst = function() {
-    var input = $(this), //инпут type="file"
+    var input = $(this); //инпут type="file"
         filename = input.val(); //имя загруженного элемента
+        console.log(filename);
         filename = getNameFromPath(filename); //Передаем функции значение input
 
         // Получаем название файла из пути
@@ -24,9 +25,11 @@ var myModule = (function(){
           }
 
       	$('#filenameFirst').val(filename);
+		if (filename) {$('#fileuploadSecond').removeAttr('disabled');}//Удаляем атрибут disabled у второго инпута
   };
 
   var _changefileUploadSecond = function() {
+  	
     var input = $(this), //инпут type="file"
         filename = input.val(); //имя загруженного элемента
         filename = getNameFromPath(filename); //Передаем функции значение input
