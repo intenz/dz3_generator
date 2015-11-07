@@ -23,6 +23,9 @@
  .sidebar-lang__link {
       font: 20px 'segoeuil';
       color: #999ca1;
+      &:hover {
+        color: #2e3641;
+      }
 }
 
 .sidebar-social__like {
