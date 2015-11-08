@@ -220,3 +220,56 @@ $(function() {
         });
     });
 }); 
+
+var cookies = {
+    getCookie: function(name) {
+        if (!name) return false;
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(name).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    },
+    setCookie: function(name, value, days) {
+        var expires;
+
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        } else {
+            expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+};
+
+$(document).ready(function() {
+    var currentLang = cookies.getCookie('lang');
+    var langSelectors = {
+        en: '.lang-en',
+        ru: '.lang-ru'
+    };
+
+    if (currentLang == 'en') {
+        $(langSelectors.en).show();
+        $(langSelectors.ru).hide();
+    } else {
+        $(langSelectors.en).hide();
+        $(langSelectors.ru).show();
+    }
+
+    $('.sidebar-lang__eng a').on('click', function() {
+        cookies.setCookie('lang', 'en', 1);
+        $(langSelectors.en).show();
+        $(langSelectors.ru).hide();
+    });
+
+    $('.sidebar-lang__rus a').on('click', function() {
+        cookies.setCookie('lang', 'ru', 1);
+        $(langSelectors.en).hide();
+        $(langSelectors.ru).show();
+    });
+});
+
+$(document).ready(function() {
+    $('.opacity__button-input-res').click(function() {
+
+    });
+});

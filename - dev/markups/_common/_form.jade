@@ -2,13 +2,15 @@
 	form(id="add-new-project" role="form").form
 		.form__group
 			.form__group-wrapper
-				.info__text Исходное изображение
+				.info__text.lang-ru Исходное изображение
+				.info__text.lang-en Original image
 				label.label__fileupload
 					input(id="fileuploadFirst" type="file" name="files[]").fileupload
 					input(id="fileurl" type="hidden").fileurl
 				input(id="filenameFirst" name="filename" placeholder="Image.jpg").input
 			.form__group-wrapper
-				.info__text Водяной знак
+				.info__text.lang-ru Водяной знак
+				.info__text.lang-en Watermark
 				label.label__fileupload
 					input(id="fileuploadSecond" type="file" name="files[]" disabled).fileupload
 					input(id="fileurl" type="hidden").fileurl
