@@ -18,13 +18,20 @@
       display: inline-block;
       cursor: pointer;
       text-align: center;
+      &:active {
+        background-color: #B8B2B3;
+      }
  }
 
  .sidebar-lang__link {
       font: 20px 'segoeuil';
       color: #999ca1;
-      &:hover {
-        color: #2e3641;
+       &:hover {
+        color: #444a53;
+      }
+       &:active {
+        color: #fff;
+      
       }
 }
 
@@ -32,17 +39,17 @@
     width: 43px;
     height: 43px;
     background-color: rgba(255,255,255,0.7);
-    background-image: url(../img/soc.png);
+    background-image: url(../img/social.png);
 	background-repeat: no-repeat;
 	display: inline-block;
-	background-position: -77px 0;
+	background-position: 0 -55px;
 	cursor: pointer;
 	margin-left: -1px;
      &:hover {
-       background-position: 5px 0;
+       background-position: -36px -55px;
      }
      &:active {
-       background-position: 5px 0;
+       background-position: -36px -55px;
      }
  }
 .sidebar-social {
@@ -60,7 +67,7 @@
 } 
 .social__icons-link {
 	background-color:rgba(255,255,255,0.7);
-	background-image:url(../img/soc.png);
+	background-image:url(../img/social.png);
 	background-repeat:no-repeat;
 	display:block;
 	cursor:pointer;
@@ -68,11 +75,20 @@
     height: 42px;
 }
 .fb {
-	background-position: -37px 0;
+  background-position: -5px -3px;
+  &:hover {
+    background-position: -48px -3px;
+  }
 }
 .tw {
-	background-position: -36px -43px;
+  background-position: -5px -107px;
+  &:hover {
+    background-position: -48px -107px;
+  }
 }
 .vk {
-	background-position: -36px -84px;
+  background-position: -5px -159px;
+  &:hover {
+    background-position: -48px -159px;
+  }
 }

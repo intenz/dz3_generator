@@ -189,10 +189,14 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $(".sidebar-social__like").click(function(){
-        $('.sidebar-social__list').toggle(600);
-        
-    });
+
+    $('.sidebar-social__like').hover(
+        function(){
+          $('.sidebar-social__list').toggle(600);
+        },
+        function(){
+            return false;
+        });
 });
 
 $(function() { 
