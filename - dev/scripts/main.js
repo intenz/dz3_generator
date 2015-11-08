@@ -208,6 +208,13 @@ $(document).ready(function(){
             return false;
         });
 });
+$(document).ready(function(){
+
+    $('#draggable').draggable({
+        cursor: "move"
+
+    });
+});
 
 $(function() { 
     $(".opacity__button-input-load").click(function() {
