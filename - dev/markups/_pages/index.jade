@@ -22,14 +22,17 @@ block title
 	block content
 		.container
 			section.section-page
-				h1.section__title Генератор водяных знаков
+				h1.section__title.lang-ru Генератор водяных знаков
+				h1.section__title.lang-en Watermarks generator
 				.container__img
 					.img__wrapp
 						.img__main
 							img(src="img/main-img_03.jpg").img__main-uploaded
 							img(src="img/watermark_03.png" id="draggable").ui-widget-content.img__watermark-uploaded
 			aside.aside-page
-				h2.aside__title Настройки
+				h2.aside__title.lang-ru Настройки
+				h2.aside__title.lang-en Settings
+				
 				include ../_common/_form
 				include ../_common/_positioning
 				include ../_common/_opacity
