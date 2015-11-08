@@ -85,29 +85,63 @@ $controls-map: sprite-map('controls/*.png', $spacing: 10px);
 	margin-left: 4px;
 }
 
-.controls__arrow_container {
-	float: right;
-	margin-top: 4px;
-}
-
-.controls__arrow {
-	display: block;
-	font-size: 0;
-	margin-bottom: 19px;
-
-	&:last-child {
-		margin-bottom: 0px;
-	}
-}
-
-$arrows: ((more, more-hover), (less, less-hover));
+$arrows: ((up, up-hover), (down, down-hover));
 
 @each $arrow, $hover in $arrows {
-	.controls__arrow-#{$arrow} {
-		@include get-sprite($controls-map, $arrow);
-		margin-bottom: 22px;
-		&:hover {
-			@include get-sprite($controls-map, $hover);
+	.ui-spinner-#{$arrow} {
+
+		.ui-icon {
+
+			@include get-sprite($controls-map, $arrow);
+			margin-bottom: 22px;
+			&:hover {
+				@include get-sprite($controls-map, $hover);
+			}
+
 		}
+		
 	}
+}
+
+.ui-spinner-input {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.ui-spinner {
+	background: none;
+
+	.ui-icon {
+		margin-top: -3px;
+		cursor: pointer;
+	}
+
+	.ui-spinner-up {
+		top: 4px;
+	}
+
+	.ui-spinner-down {
+		bottom: 5px;
+	}
+}
+
+.ui-spinner-button {
+	border: none !important;
+	background: none !important;
+	height: 8px !important;
+    width: 13px !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+
+    &:hover {
+    	background: none !important;
+    }
+}
+
+.ui-spinner-down {
+    bottom: 7px;
+}
+
+.ui-button-text {
+	padding: 4px 7px !important;
 }

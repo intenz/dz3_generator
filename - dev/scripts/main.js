@@ -9,7 +9,7 @@ var main = (function (){
     var eListener = function (){
         $('.table__link').on('click', _positioning);
         $(document).ready(_defaultPosition);
-        $('.controls__input').change(_inputPosition);
+        $(document).ready(_inputPosition);
     };
 
     var _positioning = function (e) {
@@ -30,7 +30,6 @@ var main = (function (){
                 'margin': ''
             });
             
-
         if(watermark.length) {
 
             switch (data) {
@@ -149,17 +148,28 @@ var main = (function (){
 
     var _inputPosition = function () {
 
-        var $this = $(this),
-            inputX = $('#input-X'),
-            inputY = $('#input-Y'),
-            watermark = $('.img__wrapp').find('.img__watermark-uploaded'),
-            transformValueX = inputX.val() + 'px',
-            transformValueY = inputY.val() + 'px';
+        var inputX = $('#input-X').spinner(),
+            inputY = $('#input-Y').spinner(),
+            watermark = $('.img__wrapp').find('.img__watermark-uploaded');
 
+        if(watermark.length){
+            inputX.on('spin', function(event, ui) {
+                var currentVal = ui.value;
 
+                watermark.css({
+                    'left': currentVal + 'px'
+                });
+            });
+
+            inputY.on('spin', function(event, ui) {
+                var currentVal = ui.value;
+
+                watermark.css({
+                    'bottom': currentVal + 'px'
+                });
+            });
+        }
     };
-
-
 
     return {
         init: init
