@@ -4,12 +4,12 @@
 			.form__group-wrapper
 				.info__text Исходное изображение
 				label.label__fileupload
-					input(id="fileupload" type="file" name="files[]").fileupload
+					input(id="fileuploadFirst" type="file" name="files[]").fileupload
 					input(id="fileurl" type="hidden").fileurl
-				input(id="filename" name="filename" placeholder="Image.jpg").input
+				input(id="filenameFirst" name="filename" placeholder="Image.jpg").input
 			.form__group-wrapper
 				.info__text Водяной знак
 				label.label__fileupload
-					input(id="fileupload" type="file" name="files[]").fileupload
+					input(id="fileuploadSecond" type="file" name="files[]" disabled).fileupload
 					input(id="fileurl" type="hidden").fileurl
-				input(id="filename" name="filename" placeholder="Image.jpg").input
+				input(id="filenameSecond" name="filename" placeholder="Image.jpg").input

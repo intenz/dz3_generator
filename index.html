@@ -38,18 +38,18 @@
 								<div class="form__group-wrapper">
 									<div class="info__text">Исходное изображение</div>
 									<label class="label__fileupload">
-										<input id="fileupload" type="file" name="files[]" class="fileupload">
+										<input id="fileuploadFirst" type="file" name="files[]" class="fileupload">
 										<input id="fileurl" type="hidden" class="fileurl">
 									</label>
-									<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+									<input id="filenameFirst" name="filename" placeholder="Image.jpg" class="input">
 								</div>
 								<div class="form__group-wrapper">
 									<div class="info__text">Водяной знак</div>
 									<label class="label__fileupload">
-										<input id="fileupload" type="file" name="files[]" class="fileupload">
+										<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
 										<input id="fileurl" type="hidden" class="fileurl">
 									</label>
-									<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+									<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
 								</div>
 							</div>
 						</form>
@@ -145,18 +145,18 @@
 									<div class="form__group-wrapper">
 										<div class="info__text">Исходное изображение</div>
 										<label class="label__fileupload">
-											<input id="fileupload" type="file" name="files[]" class="fileupload">
+											<input id="fileuploadFirst" type="file" name="files[]" class="fileupload">
 											<input id="fileurl" type="hidden" class="fileurl">
 										</label>
-										<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+										<input id="filenameFirst" name="filename" placeholder="Image.jpg" class="input">
 									</div>
 									<div class="form__group-wrapper">
 										<div class="info__text">Водяной знак</div>
 										<label class="label__fileupload">
-											<input id="fileupload" type="file" name="files[]" class="fileupload">
+											<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
 											<input id="fileurl" type="hidden" class="fileurl">
 										</label>
-										<input id="filename" name="filename" placeholder="Image.jpg" class="input">
+										<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
 									</div>
 								</div>
 							</form>
@@ -220,6 +220,7 @@
 			</script>
 			<script src="js/plugins.min.js"></script>
 			<script src="js/main.min.js"></script>
+			<script src="- dev/scripts/addimage.js"></script>
 			<script src="js/base64.js"></script>
 			<script src="js/canvas2image.js"></script>
 			<script src="js/html2canvas.js"></script>
