@@ -218,7 +218,7 @@ $(document).ready(function(){
 
 $(function() { 
     $(".opacity__button-input-load").click(function() {
-        html2canvas($(".container__img"), {
+        html2canvas($(".img__wrapp"), {
             onrendered: function(canvas) {
                 document.body.appendChild(canvas);
                 Canvas2Image.saveAsPNG(canvas); 
@@ -266,17 +266,32 @@ $(document).ready(function() {
         cookies.setCookie('lang', 'en', 1);
         $(langSelectors.en).show();
         $(langSelectors.ru).hide();
+        $('.sidebar-lang__rus').removeClass('active-lang');
+        $('.sidebar-lang__eng').addClass('active-lang');
     });
 
     $('.sidebar-lang__rus a').on('click', function() {
         cookies.setCookie('lang', 'ru', 1);
         $(langSelectors.en).hide();
         $(langSelectors.ru).show();
+        $('.sidebar-lang__eng').removeClass('active-lang');
+        $('.sidebar-lang__rus').addClass('active-lang');
     });
 });
 
 $(document).ready(function() {
     $('.opacity__button-input-res').click(function() {
-
+        $('.img__watermark-uploaded').css({
+                        'top': '0',
+                        'left': '0',
+                        'right': '0',
+                        'bottom': '0',
+                        'margin': 'auto'
+                });
+        $('.table__cell').removeClass('active');
+        $('[data-position="position-5"]').parent().addClass('active');
+        $('.controls__input').removeAttr('aria-valuenow');
+        $('.controls__input').setAttribute('value', ' ')
+        console.log('yohoho');
     });
 });
