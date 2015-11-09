@@ -17,18 +17,29 @@ var main = (function (){
 
         var $this = $(this),
             data = $this.data('position'),
-            watermark = $('.img__wrapp').find('.img__watermark-uploaded'),
+            imgWrap = $('.img__wrapp'),
+            watermark = imgWrap.find('.img__watermark-uploaded'),
+            mainImage = imgWrap.find('.img__main-uploaded'),
             cell = $this.closest('.table__cell'),
             otherCells = $('.positioning__table').find('.table__cell'),
             styleReset = watermark.css({
-                'top': '',
                 'left': '',
-                'right': '',
-                'bottom': '',
-                'text-align': '',
-                'transform': '',
-                'margin': ''
-            });
+                'bottom': ''
+            }),
+            inputX = $('#input-X'),
+            inputY = $('#input-Y'),
+            zero = 0,
+            leftCenter = mainImage.width()/2 - watermark.width()/2,
+            LeftMax = mainImage.width() - watermark.width(),
+            bottomCenter = mainImage.height()/2 - watermark.height()/2,
+            bottomMax = mainImage.height() - watermark.height(),
+            left = function (value) {
+                watermark.css('left', value + 'px');
+            },
+            bottom = function(value) {
+                watermark.css('bottom', value + 'px');
+            };
+
             
         if(watermark.length) {
 
@@ -37,122 +48,128 @@ var main = (function (){
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'left': '0',
-                        'top': '0'
-                    });
+                    left(zero);
+                    bottom(bottomMax);
+                    inputX.val(zero);
+                    inputY.val(bottomMax);
                     break;
                 case 'position-2':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'top': '0',
-                        'left': '0',
-                        'right': '0',
-                        'margin': 'auto'
-                    });
+                    left(leftCenter);
+                    bottom(bottomMax);
+                    inputX.val(leftCenter);
+                    inputY.val(bottomMax);
                     break;
                 case 'position-3':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'right': '0',
-                        'top': '0'
-                    });
+                    left(LeftMax);
+                    bottom(bottomMax);
+                    inputX.val(LeftMax);
+                    inputY.val(bottomMax);
                     break;
                 case 'position-4':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'top': '50%',
-                        'left': '0',
-                        'bottom': '0',
-                        'transform': 'translateY(-50%)'
-                    });
+                    left(zero);
+                    bottom(bottomCenter);
+                    inputX.val(zero);
+                    inputY.val(bottomCenter);
                     break;
                 case 'position-5':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'top': '0',
-                        'left': '0',
-                        'right': '0',
-                        'bottom': '0',
-                        'margin': 'auto'
-                    });
+                    left(leftCenter);
+                    bottom(bottomCenter);
+                    inputX.val(leftCenter);
+                    inputY.val(bottomCenter);
                     break;
                 case 'position-6':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'top': '50%',
-                        'right': '0',
-                        'bottom': '0',
-                        'transform': 'translateY(-50%)'
-                    });
+                    left(LeftMax);
+                    bottom(bottomCenter);
+                    inputX.val(LeftMax);
+                    inputY.val(bottomCenter);
                     break;
                 case 'position-7':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'left': '0',
-                        'bottom': '0'
-                    });
+                    left(zero);
+                    bottom(zero);
+                    inputX.val(zero);
+                    inputY.val(zero);
                     break;
                 case 'position-8':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'bottom': '0',
-                        'left': '0',
-                        'right': '0',
-                        'margin': 'auto'
-                    });
+                    left(leftCenter);
+                    bottom(zero);
+                    inputX.val(leftCenter);
+                    inputY.val(zero);
                     break;
                 case 'position-9':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
-                    watermark.css({
-                        'right': '0',
-                        'bottom': '0'
-                    });
+                    left(LeftMax);
+                    bottom(zero);
+                    inputX.val(LeftMax);
+                    inputY.val(zero);
                     break;
-            }
-        }
+            };
+        };
     };
 
     var _defaultPosition = function () {
+        var imgWrap = $('.img__wrapp'),
+            watermark = imgWrap.find('.img__watermark-uploaded'),
+            mainImage = imgWrap.find('.img__main-uploaded'),
+            leftCenter = mainImage.width()/2 - watermark.width()/2,
+            bottomCenter = mainImage.height()/2 - watermark.height()/2, 
+            inputX = $('#input-X'),
+            inputY = $('#input-Y'),
+            left = function (value) {
+            watermark.css('left', value + 'px');
+            },
+            bottom = function(value) {
+                watermark.css('bottom', value + 'px');
+            };
 
-        if('.img__main-uploaded'.length & '.img__watermark-uploaded'.length) {
-            var watermark = $('.img__wrapp').find('.img__watermark-uploaded'), 
-                defaultState = watermark.css({
-                        'top': '0',
-                        'left': '0',
-                        'right': '0',
-                        'bottom': '0',
-                        'margin': 'auto'
-                });
-
+        if(mainImage.length & watermark.length) {
+            left(leftCenter);
+            bottom(bottomCenter);
+            inputX.val(leftCenter);
+            inputY.val(bottomCenter);
             $('.table__cell:eq(4)').addClass('active');
-            defaultState;
         };
     };
 
     var _inputPosition = function () {
 
-        var inputX = $('#input-X').spinner(),
-            inputY = $('#input-Y').spinner(),
-            watermark = $('.img__wrapp').find('.img__watermark-uploaded');
+        var imgWrap = $('.img__wrapp'),
+            watermark = imgWrap.find('.img__watermark-uploaded'),
+            mainImage = imgWrap.find('.img__main-uploaded'),
+            LeftMax = mainImage.width() - watermark.width(),
+            bottomMax = mainImage.height() - watermark.height(),
+            inputX = $('#input-X').spinner({
+                min: 0,
+                max: LeftMax
+            }),
+            inputY = $('#input-Y').spinner({
+                min: 0,
+                max: bottomMax
+            });
 
-        if(watermark.length){
+        if(mainImage.length & watermark.length) {
             inputX.on('spin', function(event, ui) {
                 var currentVal = ui.value;
 
