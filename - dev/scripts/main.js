@@ -38,8 +38,8 @@ var main = (function (){
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     watermark.css({
-                        'left': '0',
-                        'top': '0'
+                        'left': '0%',
+                        'top': '0%'
                     });
                     break;
                 case 'position-2':
@@ -165,7 +165,7 @@ var main = (function (){
                 var currentVal = ui.value;
 
                 watermark.css({
-                    'bottom': currentVal + 'px'
+                    'top': currentVal + 'px'
                 });
             });
         }
