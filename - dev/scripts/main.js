@@ -158,7 +158,7 @@ var main = (function (){
 
                 watermark.css({
                     'left': currentVal + 'px'
-                });
+                });   
             });
 
             inputY.on('spin', function(event, ui) {
