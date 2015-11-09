@@ -14,8 +14,8 @@
 $(function () {
     'use strict';
 
-    // Initialize the jQuery File Upload widget:
-    $('#fileupload').fileupload({
+    // Для первого инпута
+    $('#fileuploadFirst').fileupload({
         url: 'uploadserver/php/'
         add: function(e,data){
 
@@ -28,18 +28,27 @@ $(function () {
                 uploadImg=data.result.files[0]; //Поместим элемент массива, который находится о объекте data, возвращаемого сервером
             $('.upload-title').text(uploadImg.name);
             img.attr('src',uploadImg.url);
-            img.appendTo('.upload-img');
-
-        progressall: function (e, data) {
-            function progress(){
-                var progress = parseInt(data.loaded/data.toltal * 100, 10);
-                $('#progress .bar').css(
-                'width',
-                progress + '%'
-             );
-            }
-            setTimeout(progress,2000);
-        }
+            img.appendTo('.img__main-uploaded');
     });
 
 });
+    // Для второго инпута
+        $('#fileuploadSecond').fileupload({
+        url: 'uploadserver/php/'
+        add: function(e,data){
+
+            console.log('add');
+            data.submit();
+
+        },
+        done: function(e,data){
+            var img = $('<img></img>'),
+                uploadImg=data.result.files[0]; //Поместим элемент массива, который находится о объекте data, возвращаемого сервером
+            $('.upload-title').text(uploadImg.name);
+            img.attr('src',uploadImg.url);
+            img.appendTo('.img__watermark-uploaded');
+
+    });
+
+});
+}
