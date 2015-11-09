@@ -206,7 +206,11 @@ $(document).ready(function(){
             max: 100,
             value: 100,
             slide: function( event, ui ) {
-                $( "#amount" ).val( ui.value );
+                var opacity_val = (ui.value)/100;
+
+                $("#draggable").css({
+                    opacity: opacity_val
+                })
             }
         });
         $( "#amount" ).val( $( "#slider" ).slider( "value" ) );
@@ -308,7 +312,12 @@ $(document).ready(function() {
         $('.table__cell').removeClass('active');
         $('[data-position="position-5"]').parent().addClass('active');
         $('.controls__input').removeAttr('aria-valuenow');
-        $('.controls__input').setAttribute('value', ' ')
+        $('#slider').slider('value', 100);
+        $("#draggable").css({
+            opacity: 1
+        });
+        $('.controls__input').setAttribute('value', ' ');
+
         console.log('yohoho');
     });
 });
