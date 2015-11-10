@@ -4,6 +4,7 @@ var myModule = (function(){
 	var init = function(){	
 		_setUpListeners();
 		//то, что должно произойти сразу
+    if ($('#fileuploadSecond').attr('disabled')) {$('#filenameSecond').css('background-color','#dcd2c7');}
 		};
 
 //Прослушивает события
@@ -25,7 +26,7 @@ var myModule = (function(){
           }
 
       	$('#filenameFirst').val(filename);
-		if (filename) {$('#fileuploadSecond').removeAttr('disabled');}//Удаляем атрибут disabled у второго инпута
+		if (filename) {$('#fileuploadSecond').removeAttr('disabled'); $('#filenameSecond').css('background-color','#f1f1f5');}//Удаляем атрибут disabled у второго инпута
   };
 
   var _changefileUploadSecond = function() {

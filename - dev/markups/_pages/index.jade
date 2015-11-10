@@ -6,18 +6,20 @@ block title
 	block sidebar
 		aside.sidebar
 			ul.sidebar-lang
-				li.sidebar-lang__rus.active-lang
-					a(href="#").sidebar-lang__link РУС
-				li.sidebar-lang__eng
-					a(href="#").sidebar-lang__link ENG
+				- var lang = ['РУС', 'ENG']
+				- var langclas = ['rus', 'eng']
+				- for (var i = 0; i < 2; ++i) {
+					li(class="sidebar-lang__"+ langclas[i])
+						a(href="#" class="sidebar-lang__link") #{lang[i]}
+				- }
 			.sidebar-social
 				ul.sidebar-social__list
-					li.social-item
-						a.social__icons-link.fb(data-type="fb" href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:3000/" target="_blank") Facebook
-					li.social-item
-						a.social__icons-link.tw(data-type="tw" href="https://twitter.com/intent/tweet?text=Hello%20world!%20http://127.0.0.1:3000/" target="_blank") Twitter
-					li.social-item
-						a.social__icons-link.vk(data-type="vk" href="http://vk.com/share.php?url=http://127.0.0.1:3000/" target="_blank") Vk
+					- var links = ['facebook.com/sharer/sharer.php?u=http://127.0.0.1:3000/', 'twitter.com/intent/tweet?text=Hello%20world!%20http://127.0.0.1:3000/', 'vk.com/share.php?url=http://127.0.0.1:3000/']
+					- var socials = ['fb', 'tw', 'vk']
+					- for (var i = 0; i < 3; ++i) {
+						li.social-item
+							a(target="_blank" data-type="" + socials[i] href="https://" + links[i] class="social__icons-link " + socials[i])
+					- }
 				.sidebar-social__like
 	block content
 		.container
