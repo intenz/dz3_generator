@@ -21,6 +21,9 @@
       &:active {
         background-color: #B8B2B3;
       }
+      &:focus {
+        outline: none;
+      }
  }
 
  .sidebar-lang__link {
@@ -31,6 +34,9 @@
       }
        &:active {
         color: #fff;
+      }
+      &:focus {
+        outline: none;
       }
 }
 
@@ -49,11 +55,15 @@
 	background-position: 0 -55px;
 	cursor: pointer;
 	margin-left: -1px;
+ 
      &:hover {
        background-position: -36px -55px;
      }
      &:active {
        background-position: -36px -55px;
+     }
+     &:focus {
+       outline: none;
      }
  }
 .sidebar-social {
@@ -98,4 +108,9 @@
 }
 .lang-en {
   display: none;
+}
+.fb, .tw, .vk {
+  &:focus{
+    outline: none;
+  }
 }
