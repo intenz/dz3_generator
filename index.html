@@ -41,7 +41,7 @@
 									<div class="info__text lang-ru">Исходное изображение</div>
 									<div class="info__text lang-en">Original image</div>
 									<label class="label__fileupload">
-										<input id="fileuploadFirst" type="file" name="files[]" class="fileupload">
+										<input id="fileuploadFirst" type="file" name="files[]" data-url="server/php/" class="fileupload">
 										<input id="fileurl" type="hidden" class="fileurl">
 									</label>
 									<input id="filenameFirst" name="filename" placeholder="Image.jpg" class="input">
@@ -50,7 +50,7 @@
 									<div class="info__text lang-ru">Водяной знак</div>
 									<div class="info__text lang-en">Watermark</div>
 									<label class="label__fileupload">
-										<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
+										<input id="fileuploadSecond" type="file" name="files[]" data-url="server/php/" disabled class="fileupload">
 										<input id="fileurl" type="hidden" class="fileurl">
 									</label>
 									<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
@@ -62,6 +62,10 @@
 						<div class="aside__positioning">
 							<h3 class="info__text lang-ru">Положение</h3>
 							<h3 class="info__text lang-en">Place</h3>
+							<ul class="position__form-list">
+								<li class="positio__form-item"><a class="postion__form-link postion__form-tileoff"></a></li>
+								<li class="positio__form-item"><a class="postion__form-link postion__form-oneoff"></a></li>
+							</ul>
 							<div class="positioning_container">
 								<table class="positioning__table">
 									<tr class="table__row">
@@ -159,7 +163,7 @@
 										<div class="info__text lang-ru">Исходное изображение</div>
 										<div class="info__text lang-en">Original image</div>
 										<label class="label__fileupload">
-											<input id="fileuploadFirst" type="file" name="files[]" class="fileupload">
+											<input id="fileuploadFirst" type="file" name="files[]" data-url="server/php/" class="fileupload">
 											<input id="fileurl" type="hidden" class="fileurl">
 										</label>
 										<input id="filenameFirst" name="filename" placeholder="Image.jpg" class="input">
@@ -168,7 +172,7 @@
 										<div class="info__text lang-ru">Водяной знак</div>
 										<div class="info__text lang-en">Watermark</div>
 										<label class="label__fileupload">
-											<input id="fileuploadSecond" type="file" name="files[]" disabled class="fileupload">
+											<input id="fileuploadSecond" type="file" name="files[]" data-url="server/php/" disabled class="fileupload">
 											<input id="fileurl" type="hidden" class="fileurl">
 										</label>
 										<input id="filenameSecond" name="filename" placeholder="Image.jpg" class="input">
@@ -180,6 +184,10 @@
 							<div class="aside__positioning">
 								<h3 class="info__text lang-ru">Положение</h3>
 								<h3 class="info__text lang-en">Place</h3>
+								<ul class="position__form-list">
+									<li class="positio__form-item"><a class="postion__form-link postion__form-tileoff"></a></li>
+									<li class="positio__form-item"><a class="postion__form-link postion__form-oneoff"></a></li>
+								</ul>
 								<div class="positioning_container">
 									<table class="positioning__table">
 										<tr class="table__row">

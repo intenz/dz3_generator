@@ -2,6 +2,12 @@
 	.aside__positioning
 		h3.info__text.lang-ru Положение
 		h3.info__text.lang-en Place
+		ul.position__form-list
+			-var nameclas = ['tileoff','oneoff']
+			-for (var i = 0; i < 2; ++i) {
+					li(class="positio__form-item")
+							a( class="postion__form-link postion__form-" + nameclas[i])
+			- }
 		.positioning_container
 			table.positioning__table
 				-var z = 1

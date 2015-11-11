@@ -14,7 +14,6 @@ var main = (function (){
 
     var _positioning = function (e) {
         e.preventDefault();
-
         var $this = $(this),
             data = $this.data('position'),
             imgWrap = $('.img__wrapp'),
