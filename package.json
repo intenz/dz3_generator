@@ -10,7 +10,7 @@
   "author": "Vladimir Sabantsev",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.9.11",
+    "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
     "gulp-compass": "^2.1.0",
