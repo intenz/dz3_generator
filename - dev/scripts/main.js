@@ -154,7 +154,7 @@ var main = (function (){
 
     var _inputPosition = function () {
 
-        var imgWrap = $('.img__wrapp'),
+       var imgWrap = $('.img__wrapp'),
             watermark = imgWrap.find('.img__watermark-uploaded'),
             mainImage = imgWrap.find('.img__main-uploaded'),
             LeftMax = mainImage.width() - watermark.width(),
@@ -174,14 +174,14 @@ var main = (function (){
 
                 watermark.css({
                     'left': currentVal + 'px'
-                });
+                });   
             });
 
             inputY.on('spin', function(event, ui) {
                 var currentVal = ui.value;
 
                 watermark.css({
-                    'top': currentVal + 'px'
+                    'bottom': currentVal + 'px'
                 });
             });
         }
