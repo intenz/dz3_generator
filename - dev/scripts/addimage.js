@@ -4,8 +4,8 @@ var myModule = (function(){
 	var init = function(){	
 		_setUpListeners();
 		//то, что должно произойти сразу
-    if ($('#fileuploadSecond').attr('disabled')) {$('#filenameSecond').css('background-color','#dcd2c7');}
-		};
+  //   if ($('#fileuploadSecond').attr('disabled')) {$('#filenameSecond').css('background-color','#dcd2c7');}
+		// };
 
 //Прослушивает события
 	var _setUpListeners=function(){
