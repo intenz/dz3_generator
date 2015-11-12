@@ -10,6 +10,7 @@ var main = (function (){
         $('.table__link').on('click', _positioning);
         $(document).ready(_defaultPosition);
         $(document).ready(_inputPosition);
+        $(document).ready(_dragWatermark);
     };
 
     var _positioning = function (e) {
@@ -23,20 +24,20 @@ var main = (function (){
             otherCells = $('.positioning__table').find('.table__cell'),
             styleReset = watermark.css({
                 'left': '',
-                'bottom': ''
+                'top': ''
             }),
             inputX = $('#input-X'),
             inputY = $('#input-Y'),
             zero = 0,
             leftCenter = mainImage.width()/2 - watermark.width()/2,
             LeftMax = mainImage.width() - watermark.width(),
-            bottomCenter = mainImage.height()/2 - watermark.height()/2,
-            bottomMax = mainImage.height() - watermark.height(),
+            topCenter = mainImage.height()/2 - watermark.height()/2,
+            topMax = mainImage.height() - watermark.height(),
             left = function (value) {
                 watermark.css('left', value + 'px');
             },
-            bottom = function(value) {
-                watermark.css('bottom', value + 'px');
+            top = function(value) {
+                watermark.css('top', value + 'px');
             };
 
             
@@ -48,81 +49,81 @@ var main = (function (){
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(zero);
-                    bottom(bottomMax);
+                    top(zero);
                     inputX.val(zero);
-                    inputY.val(bottomMax);
+                    inputY.val(zero);
                     break;
                 case 'position-2':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(leftCenter);
-                    bottom(bottomMax);
+                    top(zero);
                     inputX.val(leftCenter);
-                    inputY.val(bottomMax);
+                    inputY.val(zero);
                     break;
                 case 'position-3':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(LeftMax);
-                    bottom(bottomMax);
+                    top(zero);
                     inputX.val(LeftMax);
-                    inputY.val(bottomMax);
+                    inputY.val(zero);
                     break;
                 case 'position-4':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(zero);
-                    bottom(bottomCenter);
+                    top(topCenter);
                     inputX.val(zero);
-                    inputY.val(bottomCenter);
+                    inputY.val(topCenter);
                     break;
                 case 'position-5':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(leftCenter);
-                    bottom(bottomCenter);
+                    top(topCenter);
                     inputX.val(leftCenter);
-                    inputY.val(bottomCenter);
+                    inputY.val(topCenter);
                     break;
                 case 'position-6':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(LeftMax);
-                    bottom(bottomCenter);
+                    top(topCenter);
                     inputX.val(LeftMax);
-                    inputY.val(bottomCenter);
+                    inputY.val(topCenter);
                     break;
                 case 'position-7':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(zero);
-                    bottom(zero);
+                    top(topMax);
                     inputX.val(zero);
-                    inputY.val(zero);
+                    inputY.val(topMax);
                     break;
                 case 'position-8':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(leftCenter);
-                    bottom(zero);
+                    top(topMax);
                     inputX.val(leftCenter);
-                    inputY.val(zero);
+                    inputY.val(topMax);
                     break;
                 case 'position-9':
                     styleReset,
                     otherCells.removeClass('active'),
                     cell.addClass('active'),
                     left(LeftMax);
-                    bottom(zero);
+                    top(topMax);
                     inputX.val(LeftMax);
-                    inputY.val(zero);
+                    inputY.val(topMax);
                     break;
             };
         };
@@ -133,22 +134,35 @@ var main = (function (){
             watermark = imgWrap.find('.img__watermark-uploaded'),
             mainImage = imgWrap.find('.img__main-uploaded'),
             leftCenter = mainImage.width()/2 - watermark.width()/2,
-            bottomCenter = mainImage.height()/2 - watermark.height()/2, 
+            topCenter = mainImage.height()/2 - watermark.height()/2, 
             inputX = $('#input-X'),
             inputY = $('#input-Y'),
             left = function (value) {
             watermark.css('left', value + 'px');
             },
-            bottom = function(value) {
-                watermark.css('bottom', value + 'px');
+            top = function(value) {
+                watermark.css('top', value + 'px');
+            },
+            defaultPosition = function () {
+                left(leftCenter);
+                top(topCenter);
+                inputX.val(leftCenter);
+                inputY.val(topCenter);
+                $('.table__cell:eq(4)').addClass('active');
             };
 
         if(mainImage.length & watermark.length) {
-            left(leftCenter);
-            bottom(bottomCenter);
-            inputX.val(leftCenter);
-            inputY.val(bottomCenter);
-            $('.table__cell:eq(4)').addClass('active');
+            
+            defaultPosition();
+
+            $('.opacity__button-input-res').click(function() {
+                defaultPosition();
+                $('.controls__input').removeAttr('aria-valuenow');
+                $('#slider').slider('value', 100);
+                $("#draggable").css({
+                    opacity: 1
+                });
+            });
         };
     };
 
@@ -158,14 +172,14 @@ var main = (function (){
             watermark = imgWrap.find('.img__watermark-uploaded'),
             mainImage = imgWrap.find('.img__main-uploaded'),
             LeftMax = mainImage.width() - watermark.width(),
-            bottomMax = mainImage.height() - watermark.height(),
+            topMax = mainImage.height() - watermark.height(),
             inputX = $('#input-X').spinner({
                 min: 0,
                 max: LeftMax
             }),
             inputY = $('#input-Y').spinner({
                 min: 0,
-                max: bottomMax
+                max: topMax
             });
 
         if(mainImage.length & watermark.length) {
@@ -183,6 +197,25 @@ var main = (function (){
                 watermark.css({
                     'top': currentVal + 'px'
                 });
+            });
+        }
+    };
+
+    var _dragWatermark = function(){
+        var inputX = $('#input-X'),
+            inputY = $('#input-Y'),
+            imgWrap = $('.img__wrapp'),
+            watermark = imgWrap.find('.img__watermark-uploaded'),
+            position = watermark.position();
+
+        if(watermark.length){
+            $('#draggable').draggable({
+                cursor: "move",
+                containment: '.img__main',
+                drag: function(event, ui) {
+                    inputX.val(ui.position.left);
+                    inputY.val(ui.position.top);
+                }
             });
         }
     };
@@ -227,13 +260,6 @@ $(document).ready(function(){
         function(){
             return false;
         });
-});
-$(document).ready(function(){
-
-    $('#draggable').draggable({
-        cursor: "move"
-
-    });
 });
 
 $(function() { 
@@ -299,24 +325,3 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('.opacity__button-input-res').click(function() {
-        $('.img__watermark-uploaded').css({
-                        'top': '0',
-                        'left': '0',
-                        'right': '0',
-                        'bottom': '0',
-                        'margin': 'auto'
-                });
-        $('.table__cell').removeClass('active');
-        $('[data-position="position-5"]').parent().addClass('active');
-        $('.controls__input').removeAttr('aria-valuenow');
-        $('#slider').slider('value', 100);
-        $("#draggable").css({
-            opacity: 1
-        });
-        $('.controls__input').setAttribute('value', ' ');
-
-        console.log('yohoho');
-    });
-});
