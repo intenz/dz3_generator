@@ -24,6 +24,48 @@ $controls-map: sprite-map('controls/*.png', $spacing: 10px);
 	@include clearfix;
 }
 
+.position__form-list {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+.positio__form-item {
+	margin-left: 7px;
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.postion__form-link{
+	display: block;
+}
+
+.positio__form-item.active .postion__form-oneoff {
+	@include get-sprite($controls-map,oneoff-hover);
+}
+.positio__form-item.active .postion__form-tileoff {
+	@include get-sprite($controls-map,tileoff-hover);
+}
+
+.postion__form-oneoff {
+	@include get-sprite($controls-map,oneoff);
+			&:hover {
+				@include get-sprite($controls-map,oneoff-hover);
+			}
+}
+.postion__form-tileoff {
+	@include get-sprite($controls-map,tileoff);
+			&:hover {
+				@include get-sprite($controls-map,tileoff-hover);
+			}
+}
+
+.positio__form-item {
+	display: inline-block;
+
+}
+
 .positioning__table {
 	float: left;
 	display: block;

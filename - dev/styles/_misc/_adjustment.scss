@@ -12,8 +12,6 @@ html {
 body {
     height: 100%;
     font: 300 14px/20px 'Roboto','OpenSans-Semibold', Verdana, sans-serif;
-    background: url(../img/bg/bg-page.png);
-    background-size: cover;
 }
 
 a, a:hover {text-decoration: none;}
@@ -43,6 +41,8 @@ input {
     height: 100%;
     overflow: hidden;
     min-width: $container-width + 20px;
+    background-image: url(../img/bg/bg-page.png);
+    background-size: cover;
 
     &:after {
         content:'';
