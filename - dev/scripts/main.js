@@ -324,4 +324,3 @@ $(document).ready(function() {
         $('.sidebar-lang__rus').addClass('active-lang');
     });
 });
-
