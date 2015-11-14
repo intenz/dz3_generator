@@ -219,6 +219,9 @@ var main = (function (){
         $('.sidebar-social__like').hover(
             function(){
               $('.sidebar-social__list').stop(true, true).toggle(600);
+              $('.sidebar-social__list').mouseleave(function() {
+                  $('.sidebar-social__list').css('display','none');
+              });
             },
             function(){
                 return false;
