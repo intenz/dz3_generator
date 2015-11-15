@@ -7,7 +7,7 @@ block title
 		aside.sidebar
 			ul.sidebar-lang
 				- var lang = ['РУС', 'ENG']
-				- var langclas = ['rus', 'eng']
+				- var langclas = ['rus active-lang', 'eng']
 				- for (var i = 0; i < 2; ++i) {
 					li(class="sidebar-lang__"+ langclas[i])
 						a(href="#" class="sidebar-lang__link") #{lang[i]}
