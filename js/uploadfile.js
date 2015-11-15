@@ -7,6 +7,7 @@ var loadImages = (function () {
     //подключение модулей
     function _modules() {
         _loadMainImage();
+        if ($('#fileuploadSecond').attr('disabled')) {$('#filenameSecond').css('background-color','#dcd2c7');}
     }
 
     // загрузка основной кртинки
@@ -18,10 +19,21 @@ var loadImages = (function () {
         $('#fileuploadFirst').fileupload({
             dataType: 'json',
             add: function (e, data) {
+
+                imgName = data.files[0].name;
+
+                if (!(imgName.match(/\.(jpeg|jpg|png|gif)$/i))) {
+                  alert("Попытались загрузить не картинку? Загрузите картинку!"); // показываем предупреждение что не картинка
+                  $('#filenameFirst').val('');
+                  $('#fileuploadSecond').attr("disabled",true);
+                  $('#filenameSecond').css('background-color','#dcd2c7');
+                  return;
+                } else{
+                $('#filenameFirst').val(imgName);
                 data.formData = {
                     img: data.files[0]
                 }; //отправляем то что нам надо          
-                data.submit(); // отправляем данные на сервер
+                data.submit();}// отправляем данные на сервер
 
             },
             done: function (e, data) {
@@ -104,18 +116,26 @@ var loadImages = (function () {
     function _loadWaterMark(container,dataRatio,mainImgHeight,mainImgWidth) {
         var mainImg = $(".img__main-uploaded");
 
+        $('#fileuploadSecond').removeAttr("disabled");
+        $('#filenameSecond').css('background-color','#f1f1f5');
+        
         $('#fileuploadSecond').fileupload({
             dataType: 'json',
             add: function (e, data) {
                 var
-                    imgType = data.files[0].type,
-                    imgSize = data.files[0].size;
+                    imgName = data.files[0].name;
 
-                data.formData = {
+                if (!(imgName.match(/\.(jpeg|jpg|png|gif)$/i))) {
+                  alert("Попытались загрузить не картинку? Загрузите картинку!"); // показываем предупреждение что не картинка
+                  $('#filenameSecond').val('');                  
+                  return;
+                } 
+                else{
+                  $('#filenameSecond').val(imgName);
+                  data.formData = {
                     img: data.files[0]
-                }; //отправляем то что нам надо          
-                data.submit(); // отправляем данные на сервер методом submit
-
+                  }; //отправляем то что нам надо          
+                data.submit();} // отправляем данные на сервер методом submit
             },
             done: function (e, data) {
                 if ( ! data.result.error) {
