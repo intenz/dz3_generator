@@ -1,17 +1,17 @@
 var myModule = (function(){
 
 //Инициализирует наш модуль
-	var init = function(){	
-		_setUpListeners();
-		//то, что должно произойти сразу
+  var init = function(){  
+    _setUpListeners();
+    //то, что должно произойти сразу
     if ($('#fileuploadSecond').attr('disabled')) {$('#filenameSecond').css('background-color','#dcd2c7');}
-		};
+    };
 
 //Прослушивает события
-	var _setUpListeners=function(){
-		$('#fileuploadFirst').on('change', _changefileUploadFirst); //добавление файла в первый input
-		$('#fileuploadSecond').on('change', _changefileUploadSecond); //добавление файла во второй input
-		};
+  var _setUpListeners=function(){
+    $('#fileuploadFirst').on('change', _changefileUploadFirst); //добавление файла в первый input
+    $('#fileuploadSecond').on('change', _changefileUploadSecond); //добавление файла во второй input
+    };
 
 //Изменяет файл аплоад
   var _changefileUploadFirst = function() {
@@ -25,12 +25,12 @@ var myModule = (function(){
               return filename.replace(/\\/g, '/').replace(/.*\//, ''); //Получаем название файла из пути
           }
 
-      	$('#filenameFirst').val(filename);
-		if (filename) {$('#fileuploadSecond').removeAttr('disabled'); $('#filenameSecond').css('background-color','#f1f1f5');}//Удаляем атрибут disabled у второго инпута, если первый инпут заполнен
+        $('#filenameFirst').val(filename);
+    if (filename) {$('#fileuploadSecond').removeAttr('disabled'); $('#filenameSecond').css('background-color','#f1f1f5');}//Удаляем атрибут disabled у второго инпута
   };
 
   var _changefileUploadSecond = function() {
-  	
+    
     var input = $(this), //инпут type="file"
         filename = input.val(); //имя загруженного элемента
         filename = getNameFromPath(filename); //Передаем функции значение input
@@ -40,12 +40,12 @@ var myModule = (function(){
               return filename.replace(/\\/g, '/').replace(/.*\//, ''); //Получаем название файла из пути
           }
 
-      	$('#filenameSecond').val(filename);
+        $('#filenameSecond').val(filename);
   };
 
 //Возвращаем объект(публичные методы)
-	return {
-		init:init,
-	};
+  return {
+    init:init,
+  };
 })();
 myModule.init();
