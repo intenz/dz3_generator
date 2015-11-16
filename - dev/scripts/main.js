@@ -171,6 +171,8 @@ var main = (function (){
             $('.opacity__button-input-res').click(function() {
                 defaultPosition();
                 $('.controls__input').removeAttr('aria-valuenow');
+                $('.table__link').parent().removeClass('active');
+                $('[data-position="position-5"]').parent().addClass('active');
                 $('#slider').slider('value', 100);
                 $("#draggable").css({
                     opacity: 1
@@ -220,7 +222,7 @@ var main = (function (){
             function(){
               $('.sidebar-social__list').stop(true, true).toggle(600);
               $('.sidebar-social__list').mouseleave(function() {
-                  $('.sidebar-social__list').css('display','none');
+                  $('.sidebar-social__list').hide(600);
               });
             },
             function(){
