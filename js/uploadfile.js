@@ -120,7 +120,8 @@ var loadImages = (function () {
         var mainImg = $(".img__main-uploaded");
 
         $('#fileuploadSecond').removeAttr("disabled");
-        $('#filenameSecond').css('background-color','#f1f1f5');     
+        $('.form__group-wrapper').removeClass('disabled');
+        $('#filenameSecond').css('background-color','#f1f1f5');
         $('#fileuploadSecond').fileupload({
             dataType: 'json',
             add: function (e, data) {
@@ -135,6 +136,8 @@ var loadImages = (function () {
                 } 
                 else{
                   $('#filenameSecond').val(imgName);
+                    $('.opacity__wrapper').removeClass('disabled');
+                    $('.aside__positioning_wrap').removeClass('disabled');
                   data.formData = {
                     img: data.files[0]
                   }; //отправляем то что нам надо          
