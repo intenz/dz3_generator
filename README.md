@@ -10,7 +10,7 @@
 4. $ gem install compass
 5. $ gem install sass-globbing
 6. $ gulp
-
+```sh
 # Работа сервиса:
 1. Заргузити изображение.
 2. Загрузити водяний знак
