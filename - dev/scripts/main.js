@@ -165,7 +165,9 @@ var main = (function (){
                     min: 0,
                     max: topMax
                 }),
-                otherCells = $('.positioning__table').find('.table__cell');
+                cell = $('.table__cell'),
+                otherCells = $('.positioning__table').find('.table__cell'),
+                zero = 0;
 
             defaultPosition();
 
@@ -206,6 +208,16 @@ var main = (function (){
                         'left': LeftMax + 'px'
                     });
                     inputX.val(LeftMax);
+                } else if (value < zero) {
+                    watermark.css({
+                        'left': zero + 'px'
+                    });
+                    inputX.val(zero);
+                } else if (isNaN(value)) {
+                    watermark.css({
+                        'left': zero + 'px'
+                    });
+                    inputX.val(zero);
                 } else {
                     watermark.css({
                         'left': value + 'px'
@@ -225,6 +237,16 @@ var main = (function (){
                         'top': topMax + 'px'
                     });
                     inputY.val(topMax);
+                } else if (value < zero) {
+                    watermark.css({
+                        'top': zero + 'px'
+                    });
+                    inputY.val(zero);
+                } else if (isNaN(value)) {
+                    watermark.css({
+                        'top': zero + 'px'
+                    });
+                    inputY.val(zero);
                 } else {
                     watermark.css({
                         'top': value + 'px'
