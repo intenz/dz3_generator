@@ -24,9 +24,11 @@ var loadImages = (function () {
 
                 if (!(imgName.match(/\.(jpeg|jpg|png|gif)$/i))) {
                   alert("Попытались загрузить не картинку? Загрузите картинку!"); // показываем предупреждение что не картинка
+                  $('.img__main-uploaded').attr('src','').removeAttr('style');
+                  $('.img__watermark-uploaded').attr('src','').removeAttr('style');
                   $('#filenameFirst').val('');
                   $('#fileuploadSecond').attr("disabled",true);
-                  $('#filenameSecond').css('background-color','#dcd2c7');
+                  $('#filenameSecond').css('background-color','#dcd2c7').val('');;
                   return;
                 } else{
                 $('#filenameFirst').val(imgName);
@@ -38,6 +40,7 @@ var loadImages = (function () {
             },
             done: function (e, data) {
                     if ( ! data.result.error) {
+                        $('#filenameSecond').val('');
                         _createMainImg(data, container);
                     } else {
                         alert(data.result.error);
@@ -104,8 +107,8 @@ var loadImages = (function () {
                                         'data-newWidth': '',
                                         'data-newHeight': ''})
                                     .css({
-                                        "width": 0,
-                                        "height": 0});        
+                                        "width": 'none',
+                                        "height": 'none'});        
 
 
         _loadWaterMark(container,dataRatio,mainImgHeight,mainImgWidth); // активация загрузки водянного знака
@@ -127,7 +130,8 @@ var loadImages = (function () {
 
                 if (!(imgName.match(/\.(jpeg|jpg|png|gif)$/i))) {
                   alert("Попытались загрузить не картинку? Загрузите картинку!"); // показываем предупреждение что не картинка
-                  $('#filenameSecond').val('');                  
+                  $('#filenameSecond').val('');
+                  $('.img__watermark-uploaded').attr('src','').removeAttr('style');                  
                   return;
                 } 
                 else{
