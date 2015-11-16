@@ -120,8 +120,7 @@ var loadImages = (function () {
         var mainImg = $(".img__main-uploaded");
 
         $('#fileuploadSecond').removeAttr("disabled");
-        $('#filenameSecond').css('background-color','#f1f1f5');
-        
+        $('#filenameSecond').css('background-color','#f1f1f5');     
         $('#fileuploadSecond').fileupload({
             dataType: 'json',
             add: function (e, data) {
@@ -155,7 +154,6 @@ var loadImages = (function () {
     // создание водянного знака
     function _createWaterMark(data, container, dataRatio,mainImgHeight,mainImgWidth) {
         var
-            //mainImgWrapper = $(".main-img-wrapper"),//Класс обертки основного изображения
             mainImg = $(".img__main-uploaded"),//Класс основного изображения
             containerWidth = container.innerWidth(),//Ширина блока
             containerHeigth = container.innerHeight(),//Высота блока
@@ -171,12 +169,12 @@ var loadImages = (function () {
         $('.img__watermark-uploaded').attr({'src':data.result.url,
                                         'data-srcHeight': imgHeight,
                                         'data-srcWidth': imgWidth,
-                                        'data-ratio': dataRatio,//mainImg.data("ratio"),
-                                        'data-newWidth': imgWidth / dataRatio, //mainImg.data("ratio"),
-                                        'data-newHeight': imgHeight / dataRatio })//mainImg.data("ratio")})
+                                        'data-ratio': dataRatio,
+                                        'data-newWidth': imgWidth / dataRatio, 
+                                        'data-newHeight': imgHeight / dataRatio })
                                     .css({
-                                        "width": imgWidth / dataRatio, //mainImg.data("ratio"),
-                                        "height": imgHeight / dataRatio }); //mainImg.data("ratio")});
+                                        "width": imgWidth / dataRatio, 
+                                        "height": imgHeight / dataRatio });
     }
 
     return {
