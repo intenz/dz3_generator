@@ -40,3 +40,5 @@ Thumbs.db
 /node_modules
 /- dev/bower
 /.idea
+/server
+/uploads

@@ -31,10 +31,10 @@ var main = (function (){
             inputX = $('#input-X'),
             inputY = $('#input-Y'),
             zero = 0,
-            leftCenter = mainImage.width()/2 - watermark.width()/2,
-            LeftMax = mainImage.width() - watermark.width(),
-            topCenter = mainImage.height()/2 - watermark.height()/2,
-            topMax = mainImage.height() - watermark.height(),
+            leftCenter = Math.round(mainImage.width()/2 - watermark.width()/2),
+            LeftMax = Math.round(mainImage.width() - watermark.width()),
+            topCenter = Math.round(mainImage.height()/2 - watermark.height()/2),
+            topMax = Math.round(mainImage.height() - watermark.height()),
             left = function (value) {
                 watermark.css('left', value + 'px');
             },
@@ -138,8 +138,10 @@ var main = (function (){
             
             var watermark = imgWrap.find('.img__watermark-uploaded'),
                 mainImage = imgWrap.find('.img__main-uploaded'),
-                leftCenter = mainImage.width()/2 - watermark.width()/2,
-                topCenter = mainImage.height()/2 - watermark.height()/2, 
+                leftCenter = Math.round(mainImage.width()/2 - watermark.width()/2),
+                topCenter = Math.round(mainImage.height()/2 - watermark.height()/2),
+                LeftMax = Math.round(mainImage.width() - watermark.width()),
+                topMax = Math.round(mainImage.height() - watermark.height()), 
                 inputX = $('#input-X'),
                 inputY = $('#input-Y'),
                 left = function (value) {
@@ -155,8 +157,6 @@ var main = (function (){
                     inputY.val(topCenter);
                     $('.table__cell:eq(4)').addClass('active');
                 },
-                LeftMax = mainImage.width() - watermark.width(),
-                topMax = mainImage.height() - watermark.height(),
                 inputX = $('#input-X').spinner({
                     min: 0,
                     max: LeftMax
@@ -164,7 +164,8 @@ var main = (function (){
                 inputY = $('#input-Y').spinner({
                     min: 0,
                     max: topMax
-                });
+                }),
+                otherCells = $('.positioning__table').find('.table__cell');
 
             defaultPosition();
 
@@ -194,6 +195,44 @@ var main = (function (){
                     'top': currentVal + 'px'
                 });
             });
+
+            inputX.on('change', function(e) {
+                e.preventDefault();
+
+                var value = $(this).val();
+
+                if (value > LeftMax) {
+                    watermark.css({
+                        'left': LeftMax + 'px'
+                    });
+                    inputX.val(LeftMax);
+                } else {
+                    watermark.css({
+                        'left': value + 'px'
+                    });
+                }
+
+                otherCells.removeClass('active');
+            });
+
+            inputY.on('change', function(e) {
+                e.preventDefault();
+
+                var value = $(this).val();
+
+                if (value > topMax) {
+                    watermark.css({
+                        'top': topMax + 'px'
+                    });
+                    inputY.val(topMax);
+                } else {
+                    watermark.css({
+                        'top': value + 'px'
+                    });
+                }
+
+                otherCells.removeClass('active');
+            });
         });
     };
 
@@ -202,15 +241,19 @@ var main = (function (){
             inputY = $('#input-Y'),
             imgWrap = $('.img__wrapp'),
             watermark = imgWrap.find('.img__watermark-uploaded'),
-            position = watermark.position();
+            position = watermark.position(),
+            otherCells = $('.positioning__table').find('.table__cell');
 
         if(watermark.length){
             $('#draggable').draggable({
                 cursor: "move",
                 containment: '.img__main',
+                start: function(){
+                    otherCells.removeClass('active');
+                },
                 drag: function(event, ui) {
-                    inputX.val(ui.position.left);
-                    inputY.val(ui.position.top);
+                    inputX.val(Math.round(ui.position.left));
+                    inputY.val(Math.round(ui.position.top));
                 }
             });
         };
